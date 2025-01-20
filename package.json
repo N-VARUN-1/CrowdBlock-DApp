@@ -1,7 +1,7 @@
 {
   "type": "module",
   "scripts":{
-    "start": "node server/index.js"
+    "start": "nodemon"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
