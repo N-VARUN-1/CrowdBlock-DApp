@@ -10,24 +10,48 @@ dotenv.config();
 
 const app = express();
 
-app.use(express.json());
+// CORS Configuration
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+    
+    if (req.method === 'OPTIONS') {
+        return res.sendStatus(200);
+    }
+    next();
+});
+
+app.use(express.json({ limit: '50mb' }));
 app.use(cookieParser());
-app.use(express.urlencoded({ limit: '50mb', extended: true, parameterLimit: 50000 }));
+app.use(express.urlencoded({ 
+    limit: '50mb', 
+    extended: true, 
+    parameterLimit: 50000 
+}));
 
 app.use('/api/auth', authRoutes);
 app.use('/api/campaign', campaignRoutes);
 
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.send('CrowdBlock Backend is Running!');
 });
 
-mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/')
-    .then(() => {
-        console.log('Mongo is Connected');
-    })
-    .catch((err) => {
-        console.error(err);
-    });
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+.then(() => {
+    console.log('Mongo is Connected');
+})
+.catch((err) => {
+    console.error('MongoDB Connection Error:', err);
+});
 
-// Export the Express app as a serverless function
+// Basic error handler
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+});
+
 export default app;
