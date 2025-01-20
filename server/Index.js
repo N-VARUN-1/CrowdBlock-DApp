@@ -5,6 +5,8 @@ import dotenv from 'dotenv';
 
 import authRoutes from './Routes/auth.route.js';
 import campaignRoutes from './Routes/campaign.route.js';
+import path from 'path';
+
 
 dotenv.config();
 
