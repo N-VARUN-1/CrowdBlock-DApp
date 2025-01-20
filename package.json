@@ -12,5 +12,7 @@
     "path": "^0.12.7"
   },
   "type": "module",
-  "main": "index.js"
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon"
 }
