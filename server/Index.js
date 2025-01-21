@@ -40,4 +40,4 @@ mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/', {
     console.error('MongoDB Connection Error:', err);
 });
 
-export default app;
+module.exports = app; 
