@@ -5,24 +5,13 @@ import dotenv from 'dotenv';
 
 import authRoutes from './Routes/auth.route.js';
 import campaignRoutes from './Routes/campaign.route.js';
-import path from 'path';
 
 
 dotenv.config();
 
 const app = express();
 
-// CORS Configuration
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-    
-    if (req.method === 'OPTIONS') {
-        return res.sendStatus(200);
-    }
-    next();
-});
+// CORS
 
 app.use(express.json({ limit: '50mb' }));
 app.use(cookieParser());
@@ -48,12 +37,6 @@ mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/', {
 })
 .catch((err) => {
     console.error('MongoDB Connection Error:', err);
-});
-
-// Basic error handler
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).send('Something broke!');
 });
 
 export default app;
