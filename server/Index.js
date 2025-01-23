@@ -22,7 +22,7 @@ app.use(express.urlencoded({
     parameterLimit: 50000 
 }));
 
-app.use('/api/auth', authRoutes);
+app.use('/api/auth', ()=> {res.send('Hello');}, authRoutes);
 app.use('/api/campaign', campaignRoutes);
 
 app.get('/', (req, res) => {
