@@ -22,7 +22,7 @@ app.use(express.urlencoded({
     parameterLimit: 50000 
 }));
 
-app.use('/api/auth', ()=> {res.send('Hello');}, authRoutes);
+app.use('/api/auth', authRoutes);
 app.use('/api/campaign', campaignRoutes);
 
 app.get('/', (req, res) => {
@@ -40,4 +40,5 @@ mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/', {
     console.error('MongoDB Connection Error:', err);
 });
 
-module.exports = app; 
+export default app;
+
