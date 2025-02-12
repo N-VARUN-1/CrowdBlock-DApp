@@ -12,12 +12,6 @@ dotenv.config();
 
 const app = express();
 
-// CORS
-app.use(cors({
-    origin: process.env.FRONTEND_URL || 'http://localhost:3000',
-    credentials: true,
-}));
-
 app.use(express.json({ limit: '50mb' }));
 app.use(cookieParser());
 app.use(express.urlencoded({ 
@@ -33,7 +27,7 @@ app.get('/', (req, res) => {
     res.send('CrowdBlock Backend is Running!');
 });
 
-mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/', {
+mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
