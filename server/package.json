@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "main": "server/index.js",
+  "main": "index.js",
   "scripts": {
     "start": "nodemon",
     "dev": "nodemon index.js"
