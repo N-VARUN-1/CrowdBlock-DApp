@@ -3,8 +3,6 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 
-
-import * as ReactDOM from "react-dom";
 import {
   createBrowserRouter,
   Route,
@@ -55,14 +53,12 @@ const router = createBrowserRouter([
   }
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById('root')).render(
   <StrictMode>
     <PersistGate loading={null} persistor={persistor}>
       <Provider store={store}>
-        <RouterProvider router={router}>
-          <App />
-        </RouterProvider>
+        <RouterProvider router={router} />
       </Provider>
     </PersistGate>
-  </StrictMode>,
+  </StrictMode>
 )
