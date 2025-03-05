@@ -7,12 +7,12 @@ import path from 'path';
 import dotenv from 'dotenv';
 import { fileURLToPath } from 'url';
 
+// Import routes
+import authRoutes from './Routes/auth.route.js';
+import campaignRoutes from './Routes/campaign.route.js';
+
 // Load environment variables
 dotenv.config();
-
-// Resolve __dirname for ES module compatibility
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 // Initialize Express app
 const app = express();
@@ -30,10 +30,6 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ limit: '50mb', extended: true, parameterLimit: 50000 }));
-
-// Import routes
-import authRoutes from './Routes/auth.route.js';
-import campaignRoutes from './Routes/campaign.route.js';
 
 // Define routes
 app.use('/api/auth', authRoutes);
