@@ -17,6 +17,10 @@ dotenv.config();
 // Initialize Express app
 const app = express();
 
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
+
 // Configure CORS
 const corsOptions = {
     origin: process.env.CLIENT_URL || '*',
@@ -34,10 +38,6 @@ app.use(express.urlencoded({ limit: '50mb', extended: true, parameterLimit: 5000
 // Define routes
 app.use('/api/auth', authRoutes);
 app.use('/api/campaign', campaignRoutes);
-
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
 
 // Connect to MongoDB
 mongoose
