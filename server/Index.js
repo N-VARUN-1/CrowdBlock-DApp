@@ -1,51 +1,59 @@
-import express from 'express'
+// Import necessary modules
+import express from 'express';
 import mongoose from 'mongoose';
-import cookieParser from 'cookie-parser'
-import cors from 'cors'
+import cookieParser from 'cookie-parser';
+import cors from 'cors';
 import path from 'path';
-
 import dotenv from 'dotenv';
+import { fileURLToPath } from 'url';
+
+// Load environment variables
 dotenv.config();
 
+// Resolve __dirname for ES module compatibility
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Initialize Express app
 const app = express();
 
-const _dirname = path.resolve();
-
-const CorsOptions = {
-    origin: process.env.CLIENT_URL || '*',  // Allow frontend domain
+// Configure CORS
+const corsOptions = {
+    origin: process.env.CLIENT_URL || '*',
     credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Explicitly allow these methods
-    allowedHeaders: ['Content-Type', 'Authorization']
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
 };
+app.use(cors(corsOptions));
 
-app.use(cors(CorsOptions));
-
-import authRoutes from '../server/Routes/auth.route.js'
-import campaignRoutes from '../server/Routes/campaign.route.js'
-
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
-
-app.listen(process.env.PORT, () => {
-    console.log(`Server running on port 3000`)
-})
-
-mongoose.connect(process.env.MONGO_URI).then(() => {
-    console.log("Mongo is Connected");
-})
-    .catch((err) => {
-        console.log(err);
-    })
-
-app.use(express.json());      // Make sure your server is properly parsing JSON bodies. If you're using Express, ensure you have the JSON middleware:
+// Middleware
+app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ limit: '50mb', extended: true, parameterLimit: 50000 }));
 
+// Import routes
+import authRoutes from './Routes/auth.route.js';
+import campaignRoutes from './Routes/campaign.route.js';
+
+// Define routes
 app.use('/api/auth', authRoutes);
 app.use('/api/campaign', campaignRoutes);
 
-app.use(express.static(path.join(_dirname, '/client/dist')));
-app.get('*', (req, res) => {
-    res.sendFile(path.resolve(_dirname, 'client', 'dist', 'index.html'));
-})
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
+
+// Connect to MongoDB
+mongoose
+    .connect(process.env.MONGO_URI, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    })
+    .then(() => console.log('MongoDB Connected'))
+    .catch((err) => console.error('MongoDB Connection Error:', err));
+
+// Start server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
