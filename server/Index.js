@@ -13,10 +13,6 @@ dotenv.config();
 // Initialize Express app
 const app = express();
 
-// Import routes
-import authRoutes from './Routes/auth.route.js';
-import campaignRoutes from './Routes/campaign.route.js';
-
 app.use(
     cors({
         origin: "https://crowd-block-d-app-frontend.vercel.app", // Allow frontend running on port 5173 (Vite)
@@ -24,6 +20,12 @@ app.use(
         credentials: true, // Allow cookies if needed
     })
 );
+
+// Import routes
+import authRoutes from './Routes/auth.route.js';
+import campaignRoutes from './Routes/campaign.route.js';
+
+
 
 app.get('/', (req, res) => {
     res.send('Hello World!');
