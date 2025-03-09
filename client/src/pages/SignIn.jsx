@@ -33,7 +33,7 @@ export default function SignIn() {
         }
 
         try {
-            const response = await fetch('/api/auth/signin', {
+            const response = await fetch('https://crowd-block-d-app.vercel.app/api/auth/signin', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
