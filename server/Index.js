@@ -17,14 +17,13 @@ const app = express();
 import authRoutes from './Routes/auth.route.js';
 import campaignRoutes from './Routes/campaign.route.js';
 
-// Configure CORS
-const corsOptions = {
-    origin: process.env.CLIENT_URL || '*',
-    credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-};
-app.use(cors(corsOptions));
+app.use(
+    cors({
+        origin: "http://localhost:5173", // Allow frontend running on port 5173 (Vite)
+        methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
+        credentials: true, // Allow cookies if needed
+    })
+);
 
 app.get('/', (req, res) => {
     res.send('Hello World!');
