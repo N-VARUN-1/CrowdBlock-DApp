@@ -7,19 +7,15 @@ import path from 'path';
 import dotenv from 'dotenv';
 import { fileURLToPath } from 'url';
 
-// Import routes
-import authRoutes from './Routes/auth.route.js';
-import campaignRoutes from './Routes/campaign.route.js';
-
 // Load environment variables
 dotenv.config();
 
 // Initialize Express app
 const app = express();
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
+// Import routes
+import authRoutes from './Routes/auth.route.js';
+import campaignRoutes from './Routes/campaign.route.js';
 
 // Configure CORS
 const corsOptions = {
@@ -29,6 +25,10 @@ const corsOptions = {
     allowedHeaders: ['Content-Type', 'Authorization'],
 };
 app.use(cors(corsOptions));
+
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
 
 // Middleware
 app.use(express.json());
