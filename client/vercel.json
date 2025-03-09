@@ -3,6 +3,7 @@
     {
       "source": "/api/:path*",
       "destination": "https://crowd-block-d-app.vercel.app/api/:path*"
-    }
+    },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
