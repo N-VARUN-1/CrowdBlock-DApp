@@ -19,7 +19,7 @@ import campaignRoutes from './Routes/campaign.route.js';
 
 app.use(
     cors({
-        origin: "http://localhost:5173", // Allow frontend running on port 5173 (Vite)
+        origin: "https://crowd-block-d-app-frontend.vercel.app", // Allow frontend running on port 5173 (Vite)
         methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
         credentials: true, // Allow cookies if needed
     })
