@@ -77,7 +77,7 @@ export default function Contribute() {
         const fetchCampaignDetails = async () => {
             setIsLoading(true);
             try {
-                const response = await fetch('https://crowd-block-d-app.vercel.app/api/campaign/get-all-campaigns');
+                const response = await fetch('https://crowd-block-d-app.vercel.app/api/campaign/get-all-campaigns', {credentials: 'include');
                 if (!response.ok) {
                     throw new Error('Failed to fetch campaigns');
                 }
