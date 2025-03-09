@@ -112,7 +112,7 @@ export default function ResponsiveSidebar() {
             setIsLoading(true);
             try {
                 // console.log(currentUser.userId)
-                const response = await fetch(`https://crowd-block-d-app.vercel.app/api/campaign/get-campaign-details/${currentUser.userId}`);
+                const response = await fetch(`https://crowd-block-d-app.vercel.app/api/campaign/get-campaign-details/${currentUser.userId}`, {credentails: 'include');
                 if (!response.ok) {
                     throw new Error('Failed to fetch campaigns');
                 }
