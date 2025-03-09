@@ -11,6 +11,10 @@ dotenv.config();
 // Initialize Express app
 const app = express();
 
+// Import routes
+import authRoutes from './Routes/auth.route.js';
+import campaignRoutes from './Routes/campaign.route.js';
+
 // IMPORTANT: CORS middleware must be one of the first middleware
 app.use(cors({
     origin: "https://crowd-block-d-app-frontend.vercel.app",
@@ -24,17 +28,16 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ limit: '50mb', extended: true, parameterLimit: 50000 }));
 
-// Import routes
-import authRoutes from './Routes/auth.route.js';
-import campaignRoutes from './Routes/campaign.route.js';
 
-// Define routes
-app.use('/api/auth', authRoutes);
-app.use('/api/campaign', campaignRoutes);
 
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });
+// Define routes
+app.use('/api/auth', authRoutes);
+app.use('/api/campaign', campaignRoutes);
+
+
 
 // OPTIONS preflight response for all routes
 app.options('*', (req, res) => {
