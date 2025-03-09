@@ -245,7 +245,7 @@ export default function Create() {
                 //         photo
                 //     })
                 // });
-                const response = await fetch('/api/campaign/create-campaign', {
+                const response = await fetch('https://crowd-block-d-app.vercel.app/api/campaign/create-campaign', {
                     method: 'POST',
                     body: formDataToSend
                 });
