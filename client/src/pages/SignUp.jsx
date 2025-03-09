@@ -28,7 +28,6 @@ export default function SignUp() {
 
         try {
             const response = await fetch('https://crowd-block-d-app.vercel.app/api/auth/signup', {
-                mode: 'cors',
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
