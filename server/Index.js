@@ -40,9 +40,9 @@ app.use('/api/campaign', campaignRoutes);
 
 
 // OPTIONS preflight response for all routes
-// app.options('*', (req, res) => {
-//     res.status(204).end();
-// });
+app.options('*', (req, res) => {
+    res.status(204).end();
+});
 
 // Connect to MongoDB
 mongoose
