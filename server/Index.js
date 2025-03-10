@@ -41,7 +41,8 @@ app.use('/api/campaign', campaignRoutes);
 
 // OPTIONS preflight response for all routes
 app.options('*', (req, res) => {
-    res.status(204).end();
+    // res.status(204).end();
+    res.sendStatus(200);
 });
 
 // Connect to MongoDB
