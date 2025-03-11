@@ -36,7 +36,7 @@ app.use((req, res, next) => {
     res.header("Access-Control-Allow-Credentials", "true");
     
     if (req.method === "OPTIONS") {
-        return res.sendStatus(200);  // ✅ Respond with HTTP 200 OK for preflight
+        return res.sendStatus(201);  // ✅ Respond with HTTP 200 OK for preflight
     }
     next();
 });
