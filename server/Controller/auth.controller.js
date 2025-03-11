@@ -54,7 +54,7 @@ export const signUp = async (req, res) => {
         await transporter.sendMail(mailOptions);
 
         console.log('SignUp successfull')
-        res.status(200).json({ message: 'Sign Up successfull !' })
+        res.status(201).json({ message: 'Sign Up successfull !' })
     } catch (error) {
         console.log(error.message);
         res.status(500).json({
