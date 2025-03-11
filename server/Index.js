@@ -11,10 +11,6 @@ dotenv.config();
 // Initialize Express app
 const app = express();
 
-// Import routes
-import authRoutes from './Routes/auth.route.js';
-import campaignRoutes from './Routes/campaign.route.js';
-
 // IMPORTANT: CORS middleware must be one of the first middleware
 app.use(cors({
     origin: "*",
@@ -31,6 +27,12 @@ app.options('*', (req, res) => {
     res.setHeader("Access-Control-Allow-Credentials", "true");
     res.sendStatus(200);
 });
+
+// Import routes
+import authRoutes from './Routes/auth.route.js';
+import campaignRoutes from './Routes/campaign.route.js';
+
+
 
 // Other middleware
 app.use(express.json());
