@@ -17,7 +17,7 @@ import campaignRoutes from './Routes/campaign.route.js';
 
 // IMPORTANT: CORS middleware must be one of the first middleware
 app.use(cors({
-    origin: "https://crowd-block-d-app-frontend.vercel.app",
+    origin: "*",
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"]
