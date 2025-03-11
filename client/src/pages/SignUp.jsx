@@ -31,6 +31,7 @@ export default function SignUp() {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
+                    'Access-Control-Allow-Origin': 'https://crowd-block-d-app-frontend.vercel.app'
                 },
                 body: JSON.stringify(formData)
             })
