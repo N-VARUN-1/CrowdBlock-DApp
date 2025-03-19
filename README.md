@@ -9,25 +9,25 @@ CrowdBlock is a decentralized application (DApp) built on Solidity, enabling sec
 - No Middlemen: Direct transactions between fundraisers and contributors.
 
 ## 🔧 Tech Stack
-Blockchain: Ethereum
-Smart Contracts: Solidity
-Frontend: React.js
-Backend: Node.js, Express.js
-Wallet Integration: MetaMask, Ethers.js
+- Blockchain: Ethereum
+- Smart Contracts: Solidity
+- Frontend: React.js
+- Backend: Node.js, Express.js
+- Wallet Integration: MetaMask, Ethers.js
 
 ## 🚀 How It Works
-Create Campaigns: Users define fundraising goals and deadlines.
-Contribute Funds: Supporters send crypto directly to smart contracts.
-Fund Release: Funds are withdrawn only when conditions are met.
+- Create Campaigns: Users define fundraising goals and deadlines.
+- Contribute Funds: Supporters send crypto directly to smart contracts.
+- Fund Release: Funds are withdrawn only when conditions are met.
 
 ## 📖 Getting Started
-Prerequisites
-Node.js (v16+), MetaMask, Hardhat/Truffle, Ganache/Testnet
+- Prerequisites
+- Node.js (v16+), MetaMask, Hardhat/Truffle, Ganache/Testnet
 
 ## Installation & Deployment
-git clone https://github.com/yourusername/crowdblock.git
-cd crowdblock
-npm install
-npx hardhat compile
-npx hardhat run scripts/deploy.js --network rinkeby
-npm start
+- git clone https://github.com/yourusername/crowdblock.git
+- cd crowdblock
+- npm install
+- npx hardhat compile
+- npx hardhat run scripts/deploy.js --network rinkeby
+- npm start
