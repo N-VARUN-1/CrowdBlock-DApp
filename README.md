@@ -3,10 +3,10 @@
 CrowdBlock is a decentralized application (DApp) built on Solidity, enabling secure and transparent crowdfunding. It leverages blockchain technology to eliminate intermediaries, ensuring direct and efficient transactions while maintaining trust and immutability.
 
 ## ✨ Features
-Trustless & Secure: Smart contracts handle fund collection and distribution.
-Transparent & Immutable: All transactions are recorded on-chain.
-Efficient Fund Management: Funds are released only when milestones are met.
-No Middlemen: Direct transactions between fundraisers and contributors.
+- Trustless & Secure: Smart contracts handle fund collection and distribution.
+- Transparent & Immutable: All transactions are recorded on-chain.
+- Efficient Fund Management: Funds are released only when milestones are met.
+- No Middlemen: Direct transactions between fundraisers and contributors.
 
 ## 🔧 Tech Stack
 Blockchain: Ethereum
