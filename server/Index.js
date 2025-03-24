@@ -5,6 +5,10 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import dotenv from 'dotenv';
 
+// Import routes
+import authRoutes from './Routes/auth.route.js';
+import campaignRoutes from './Routes/campaign.route.js';
+
 // Load environment variables
 dotenv.config();
 
@@ -13,19 +17,9 @@ const app = express();
 
 // IMPORTANT: CORS middleware must be one of the first middleware
 app.use(cors({
-    origin: "https://crowd-block-d-app-frontend.vercel.app",
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"]
+    origin: process.env.FRONTEND_URL || "http://localhost:5173",
+    credentials: true
 }));
-
-
-
-// Import routes
-import authRoutes from './Routes/auth.route.js';
-import campaignRoutes from './Routes/campaign.route.js';
-
-
 
 // Other middleware
 app.use(express.json());
