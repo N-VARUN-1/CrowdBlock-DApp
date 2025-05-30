@@ -372,7 +372,7 @@ export default function Create() {
             {/* Left Div */}
             <div className="rounded-lg md:w-1/2 w-full bg-gray-800 flex items-center justify-center order-1 md:order-first">
                 <img
-                    src="/src/images/CreateCampaign/img1.png"
+                    src="/public/images/CreateCampaign/img1.png"
                     alt="Campaign Creation"
                     className="max-w-full max-h-full object-contain rounded-lg"
                 />
