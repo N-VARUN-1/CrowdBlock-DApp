@@ -23,7 +23,7 @@ export default function Hero() {
     const cardData = [
         {
             title: "Create your Campaign",
-            image: "/src/images/createCampaign.jpeg",
+            image: "/public/images/createCampaign.jpeg",
             description: "Launch your funding initiative with ease and transparency.",
             icon: FaRocket,
             bgColor: "bg-blue-600",
@@ -33,7 +33,7 @@ export default function Hero() {
         },
         {
             title: "Contribute to your desired Campaign",
-            image: "/src/images/contriCampaign2.jpeg",
+            image: "/public/images/contriCampaign2.jpeg",
             description: "Support innovative projects and make a difference.",
             icon: FaHandHoldingUsd,
             bgColor: "bg-green-600",
@@ -43,7 +43,7 @@ export default function Hero() {
         },
         {
             title: "Withdraw Funds",
-            image: "/src/images/withdraw.jpeg",
+            image: "/public/images/withdraw.jpeg",
             description: "Securely access and manage your campaign funds.",
             icon: FaWallet,
             bgColor: "bg-purple-600",
@@ -59,7 +59,7 @@ export default function Hero() {
                 {/* Hero Image */}
                 <img
                     className='z-[-50] animate__animated animate__zoomIn animate__fast rounded-2xl w-full max-h-[87vh]'
-                    src="/src/images/HOME.png"
+                    src="/public/images/HOME.png"
                     alt="Hero Background"
                     loading="lazy"
                 />
