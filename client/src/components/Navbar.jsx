@@ -93,13 +93,30 @@ export default function Component() {
                             <span className="block text-sm">{currentUser ? currentUser.userId : "User ID"}</span>
                             <span className="font-semibold block truncate text-sm font-medium">{currentUser ? currentUser.email : "user@email.com"}</span>
                         </Dropdown.Header>
-                        <Link to='/user-profile'>
+                        {currentUser ? (<Link to='/user-profile'>
                             <Dropdown.Item
                                 className="font-bold text-white hover:bg-gray-700 focus:bg-gray-700 dark:hover:bg-gray-700 dark:focus:bg-gray-700"
                             >
                                 Dashboard
                             </Dropdown.Item>
-                        </Link>
+                        </Link>) : (
+                            <div>
+                                Login to access your dashboard
+                                <Dropdown.Item
+                                    onClick={handleLogin}
+                                    className="font-bold text-white hover:bg-gray-700 focus:bg-gray-700 dark:hover:bg-gray-700 dark:focus:bg-gray-700"
+                                >
+                                    Sign In
+                                </Dropdown.Item>
+                                <Dropdown.Item
+                                    onClick={() => navigate('/signup')}
+                                    className="font-bold text-white hover:bg-gray-700 focus:bg-gray-700 dark:hover:bg-gray-700 dark:focus:bg-gray-700"
+                                >
+                                    Sign Up
+                                </Dropdown.Item>
+                            </div>
+                        )
+                        }
                         {/* 
                         <Dropdown.Item
                             className="font-bold text-white hover:bg-gray-700 focus:bg-gray-700 dark:hover:bg-gray-700 dark:focus:bg-gray-700"
