@@ -16,10 +16,30 @@ dotenv.config();
 const app = express();
 
 // IMPORTANT: CORS middleware must be one of the first middleware
-app.use(cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:5173",
-    credentials: true
-}));
+// Define corsOptions object
+const corsOptions = {
+  origin: "https://crowd-block-d-app-frontend.vercel.app",
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  preflightContinue: true,
+  optionsSuccessStatus: 200 
+};
+
+// Handle preflight OPTIONS requests
+app.use((req, res, next) => {
+  if (req.method === 'OPTIONS') {
+    res.setHeader('Access-Control-Allow-Origin', 'https://crowd-block-d-app-frontend.vercel.app');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+    return res.status(200).end();
+  }
+  next();
+});
+
+// Use cors middleware with the defined options
+app.use(cors(corsOptions));
 
 // Other middleware
 app.use(express.json());
