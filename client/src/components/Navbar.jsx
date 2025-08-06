@@ -40,9 +40,9 @@ export default function Component() {
         <>
             <div className={navigationLinks}><Link to='/'>Home</Link></div>
             <div className={navigationLinks}>About</div>
-            <div className={navigationLinks}>Services</div>
+{/*             <div className={navigationLinks}>Services</div>
             <div className={navigationLinks}>Pricing</div>
-            <div className={navigationLinks}>Contact</div>
+            <div className={navigationLinks}>Contact</div> */}
         </>
     );
 
