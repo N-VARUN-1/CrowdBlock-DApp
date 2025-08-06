@@ -23,7 +23,7 @@ export default function Hero() {
     const cardData = [
         {
             title: "Create your Campaign",
-            image: "/public/images/createCampaign.jpeg",
+            image: "/images/createCampaign.jpeg",
             description: "Launch your funding initiative with ease and transparency.",
             icon: FaRocket,
             bgColor: "bg-blue-600",
@@ -33,7 +33,7 @@ export default function Hero() {
         },
         {
             title: "Contribute to your desired Campaign",
-            image: "/public/images/contriCampaign2.jpeg",
+            image: "/images/contriCampaign2.jpeg",
             description: "Support innovative projects and make a difference.",
             icon: FaHandHoldingUsd,
             bgColor: "bg-green-600",
@@ -43,7 +43,7 @@ export default function Hero() {
         },
         {
             title: "Withdraw Funds",
-            image: "/public/images/withdraw.jpeg",
+            image: "/images/withdraw.jpeg",
             description: "Securely access and manage your campaign funds.",
             icon: FaWallet,
             bgColor: "bg-purple-600",
