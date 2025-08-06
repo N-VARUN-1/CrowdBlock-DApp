@@ -70,7 +70,7 @@ export default function Component() {
             <div className="flex justify-between items-center m-4 p-3">
                 {/* Logo */}
                 <div>
-                    <img className='h-[40px] w-[95px]' src="/src/images/logo-new.png" alt="" />
+                    <img className='h-[40px] w-[95px]' src="/images/logo-new.png" alt="" />
                 </div>
 
                 {/* Desktop Navigation */}
@@ -84,7 +84,7 @@ export default function Component() {
                         arrowIcon={false}
                         inline
                         label={
-                            currentUser ? (<img src='/src/images/userAvatar.png' className='w-[45px] h-[45px] rounded-full' />) : (<img src='/src/images/userNull.png' className='w-[45px] h-[45px] rounded-full' />)
+                            currentUser ? (<img src='/images/userAvatar.png' className='w-[45px] h-[45px] rounded-full' />) : (<img src='/images/userNull.png' className='w-[45px] h-[45px] rounded-full' />)
                         }
                         className=" bg-gray-900 border-lime-400 border-none z-[110]"
                         menuClassName="bg-gray-800 border-gray-700 z-[110]"
