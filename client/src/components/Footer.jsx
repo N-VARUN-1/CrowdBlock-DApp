@@ -12,7 +12,7 @@ export default function Component() {
                     <div className="flex items-center justify-center w-full md:w-auto">
                         <img
                             className='h-[40px] w-[95px] object-contain'
-                            src="/src/images/logo-new.png"
+                            src="/images/logo-new.png"
                             alt="Company Logo"
                         />
                     </div>
