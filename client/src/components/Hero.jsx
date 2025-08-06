@@ -59,7 +59,7 @@ export default function Hero() {
                 {/* Hero Image */}
                 <img
                     className='z-[-50] animate__animated animate__zoomIn animate__fast rounded-2xl w-full max-h-[87vh]'
-                    src="/public/images/HOME.png"
+                    src="/images/HOME.png"
                     alt="Hero Background"
                     loading="lazy"
                 />
