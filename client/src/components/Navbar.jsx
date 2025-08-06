@@ -100,20 +100,8 @@ export default function Component() {
                                 Dashboard
                             </Dropdown.Item>
                         </Link>) : (
-                            <div>
+                            <div className="font-bold text-white hover:bg-gray-700 focus:bg-gray-700 dark:hover:bg-gray-700 dark:focus:bg-gray-700">
                                 Login to access your dashboard
-                                <Dropdown.Item
-                                    onClick={handleLogin}
-                                    className="font-bold text-white hover:bg-gray-700 focus:bg-gray-700 dark:hover:bg-gray-700 dark:focus:bg-gray-700"
-                                >
-                                    Sign In
-                                </Dropdown.Item>
-                                <Dropdown.Item
-                                    onClick={() => navigate('/signup')}
-                                    className="font-bold text-white hover:bg-gray-700 focus:bg-gray-700 dark:hover:bg-gray-700 dark:focus:bg-gray-700"
-                                >
-                                    Sign Up
-                                </Dropdown.Item>
                             </div>
                         )
                         }
